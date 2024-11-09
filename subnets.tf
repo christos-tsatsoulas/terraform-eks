@@ -1,3 +1,6 @@
+#Creating 2 private subnets and 2 public subnets and tag them after the zones 1&2 respectively
+
+#Private subnet for zone 1
 resource "aws_subnet" "private_zone1" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = "10.0.0.0/19"
@@ -10,6 +13,7 @@ resource "aws_subnet" "private_zone1" {
   }
 }
 
+#Private subnet for zone 2
 resource "aws_subnet" "private_zone2" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = "10.0.32.0/19"
@@ -22,6 +26,7 @@ resource "aws_subnet" "private_zone2" {
   }
 }
 
+#Public subnet for zone 1
 resource "aws_subnet" "public_zone1" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.64.0/19"
@@ -35,6 +40,7 @@ resource "aws_subnet" "public_zone1" {
   }
 }
 
+#Public subnet for zone 2
 resource "aws_subnet" "public_zone2" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.96.0/19"
